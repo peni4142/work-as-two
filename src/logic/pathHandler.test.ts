@@ -9,7 +9,7 @@ suite("pathHandler", ()=>{
     });
     
     test("just a test",()=> {
-        equal(5,5);
+        equal(5,4);
     });
 
 });
