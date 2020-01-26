@@ -3,6 +3,7 @@
 	"displayName": "Work as two",
 	"description": "Opens the associated file for simultaneous work on two files.",
 	"version": "0.0.1",
+	"license": "GPL-3.0-or-later",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
