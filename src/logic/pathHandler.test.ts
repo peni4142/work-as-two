@@ -1,17 +1,19 @@
 import { equal } from "assert";
 import { PathHandler } from "./pathHandler";
 import { resolve } from "path";
+import { IMapPathResult } from "./interfaces";
+import { HandSide } from "./enum";
 
 
 
 suite("pathHandler", () => {
 
     let ph: PathHandler = new PathHandler({
-        pathLeft: {
+        pathRight: {
             escapedRegex: /^([^.]*)(\.ts)/,
             result: "$1.test$2"
         },
-        pathRight: {
+        pathLeft: {
             escapedRegex: /^([^.]*)\.test(\.ts)/,
             result: "$1$2"
         }
@@ -26,19 +28,21 @@ suite("pathHandler", () => {
     });
 
     test("map test to functional", () => {
-        let complemantaryPath: string | null = ph.mapPath(testPath);
-        equal(complemantaryPath, functionalPath);
+        let complemantary: IMapPathResult | null = ph.mapPath(testPath);
+        equal(complemantary?.path, functionalPath);
+        equal(complemantary?.handSide, HandSide.Left);
     });
 
     test("map functional to test", () => {
-        let complemantaryPath: string | null = ph.mapPath(functionalPath);
-        equal(complemantaryPath, testPath);
+        let complemantary: IMapPathResult | null = ph.mapPath(functionalPath);
+        equal(complemantary?.path, testPath);
+        equal(complemantary?.handSide, HandSide.Right);
     });
 
 
     test("false map", () => {
-        let complemantaryPath: string | null = ph.mapPath(resolve("tslint.json"));
-        equal(complemantaryPath, null);
+        let complemantary: IMapPathResult | null = ph.mapPath(resolve("tslint.json"));
+        equal(complemantary, null);
     });
 
 

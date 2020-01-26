@@ -4,6 +4,9 @@
 	"description": "Opens the associated file for simultaneous work on two files.",
 	"version": "0.0.1",
 	"license": "GPL-3.0-or-later",
+	"repository": { 
+		"url": "https://github.com/peni4142/work-as-two",
+	},
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -11,16 +14,10 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
-			}
-		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
