@@ -10,6 +10,7 @@
     "typescript.tsc.autoDetect": "off",
     "mochaExplorer.files": "src/**/*.test.ts",
     "mochaExplorer.require": "ts-node/register",
-    "mochaExplorer.nodePath": "/snap/bin/node",
+    "mochaExplorer.nodePath": null,
+    "mochaExplorer.ui": "tdd",
     "mochaExplorer.monkeyPatch": false
 }
