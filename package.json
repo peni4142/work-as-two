@@ -4,8 +4,8 @@
 	"description": "Opens the associated file for simultaneous work on two files.",
 	"version": "0.0.1",
 	"license": "GPL-3.0-or-later",
-	"repository": { 
-		"url": "https://github.com/peni4142/work-as-two",
+	"repository": {
+		"url": "https://github.com/peni4142/work-as-two"
 	},
 	"engines": {
 		"vscode": "^1.41.0"
@@ -16,16 +16,16 @@
 	"activationEvents": [
 		"*"
 	],
-	"main": "./out/extension.js",
-	"contributes": {
-	},
+	"main": "./dist/extension.js",
+	"contributes": {},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretestVscode": "npm run compile",
 		"test": "mocha -r ts-node/register src/**/*.test.ts -u tdd",
-		"testVscode": "node ./out/test/runTest.js"
+		"testVscode": "node ./out/test/runTest.js",
+		"webpack" :"webpack --mode production"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
@@ -33,9 +33,12 @@
 		"@types/node": "^12.11.7",
 		"@types/vscode": "^1.41.0",
 		"glob": "^7.1.5",
+		"ts-loader": "^6.2.1",
 		"ts-node": "^8.6.2",
 		"tslint": "^5.20.0",
 		"typescript": "^3.6.4",
-		"vscode-test": "^1.2.2"
+		"vscode-test": "^1.2.2",
+		"webpack": "^4.41.5",
+		"webpack-cli": "^3.3.10"
 	}
 }
