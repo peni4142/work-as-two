@@ -20,8 +20,8 @@
 	"contributes": {},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
+		"compile": "webpack --mode development",
+		"watch": "webpack --mode development -w",
 		"pretestVscode": "npm run compile",
 		"test": "mocha -r ts-node/register src/**/*.test.ts -u tdd",
 		"testVscode": "node ./out/test/runTest.js",
