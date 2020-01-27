@@ -25,6 +25,7 @@ jobs:
       run: |
         npm i
         npm i mocha -g
+        npm i ts-node -g
         npm run test
         npm run build
         rm -rf src
