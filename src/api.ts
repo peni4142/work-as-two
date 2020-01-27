@@ -22,16 +22,14 @@ export class API {
 
 
     public static run() {
-
         workspace.onDidOpenTextDocument((e: TextDocument) => {
             let complemantary: IMapPathResult | null = this.ph.mapPath(e.fileName);
             try {
                 if (complemantary && complemantary.path !== this.lastOpened) {
-                    window.showInformationMessage("should open");
                     workspace.openTextDocument(Uri.file(complemantary.path))
                         .then((d: TextDocument) => {
-                            window.showTextDocument(d, complemantary?.handSide=== HandSide.Left? 1:2);
-                            window.showTextDocument(e, complemantary?.handSide=== HandSide.Right? 1:2);
+                            window.showTextDocument(d, complemantary?.handSide === HandSide.Left ? 1 : 2);
+                            window.showTextDocument(e, complemantary?.handSide === HandSide.Right ? 1 : 2);
                         });
                 }
             }

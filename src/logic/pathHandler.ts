@@ -8,6 +8,8 @@ export class PathHandler {
 
     }
 
+    // test
+
     public mapPath(path: string): IMapPathResult | null {
         if (existsSync(path)) {
             if (this.pathMapping.pathLeft.escapedRegex.test(path)) {
