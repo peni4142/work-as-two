@@ -19,7 +19,7 @@
 	"main": "./dist/extension.js",
 	"contributes": {},
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
+		"vscode:prepublish": "npm run build",
 		"compile": "webpack --mode development",
 		"watch": "webpack --mode development -w",
 		"pretestVscode": "npm run compile",
