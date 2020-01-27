@@ -1,6 +1,7 @@
 {
 	"name": "work-as-two",
 	"displayName": "Work as two",
+	"author": {"name": "peni4142"},
 	"description": "Opens the associated file for simultaneous work on two files.",
 	"version": "0.0.1",
 	"license": "GPL-3.0-or-later",
