@@ -24,6 +24,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm i
+        npm i mocha -g
         npm run test
         npm run build
         rm -rf src
