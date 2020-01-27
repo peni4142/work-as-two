@@ -25,7 +25,7 @@
 		"pretestVscode": "npm run compile",
 		"test": "mocha -r ts-node/register src/**/*.test.ts -u tdd",
 		"testVscode": "node ./out/test/runTest.js",
-		"webpack" :"webpack --mode production"
+		"build" :"webpack --mode production"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
