@@ -24,6 +24,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm i
+        npm run test
         npm run build
         rm -rf src
         rm -rf node_modules
