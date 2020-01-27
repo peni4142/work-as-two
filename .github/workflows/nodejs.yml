@@ -27,6 +27,5 @@ jobs:
         npm run build
         rm -rf src
         rm -rf node_modules
-        npm publish
       env:
         CI: true
