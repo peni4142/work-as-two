@@ -2,8 +2,6 @@ import { workspace, TextDocument, window, Uri } from "vscode";
 import { PathHandler } from "./logic/pathHandler";
 import { IMapPathResult } from "./logic/interfaces";
 import { HandSide } from "./logic/enum";
-import { CancelableQueue } from "./logic/cancelableQueue";
-
 
 
 
