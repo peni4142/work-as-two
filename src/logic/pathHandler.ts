@@ -8,7 +8,6 @@ export class PathHandler {
 
     }
 
-    // test
 
     public mapPath(path: string): IMapPathResult | null {
         if (existsSync(path)) {
@@ -17,7 +16,7 @@ export class PathHandler {
                 if (existsSync(newPath)) {
                     return {
                         path : newPath,
-                        handSide: HandSide.Left
+                        handSide: HandSide.Right
                     };
                 }
             }
@@ -26,7 +25,7 @@ export class PathHandler {
                 if (existsSync(newPath)) {
                     return {
                         path : newPath,
-                        handSide: HandSide.Right
+                        handSide: HandSide.Left
                     };
                 }
             }
