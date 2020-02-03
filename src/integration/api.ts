@@ -12,8 +12,8 @@ export class API {
     private static prevState: TextEditor[] = window.visibleTextEditors;
 
     public static onDidShowTextDocument() {
-        window.onDidChangeVisibleTextEditors((actualState:TextEditor[])=>{
-            try{                
+        window.onDidChangeVisibleTextEditors((actualState: TextEditor[]) => {
+            try {
                 if (actualState.length - this.prevState.length === 1) {
                     for (let i: number = 0; i < actualState.length; i++) {
                         if (!this.documentIsOpened(actualState[i].document, this.prevState)) {
@@ -23,7 +23,7 @@ export class API {
                     }
                 }
             }
-            finally{
+            finally {
                 this.prevState = actualState;
             }
         });
@@ -51,14 +51,17 @@ export class API {
             }
         });
         let complemantary: IMapPathResult | null = ph.mapPath(document.fileName);
-
-        if (complemantary && document.fileName !== this.lastOpenedComplementary) {
-            workspace.openTextDocument(Uri.file(complemantary.path))
-                .then((complemantaryDocument: TextDocument) => {
-                    window.showTextDocument(complemantaryDocument, complemantary?.handSide === HandSide.Left ? 1 : 2);
-                    window.showTextDocument(document, complemantary?.handSide === HandSide.Right ? 1 : 2);
-                    this.lastOpenedComplementary = <string>complemantary?.path;
-                });
+        if (document.fileName !== this.lastOpenedComplementary) {
+            if (complemantary) {
+                workspace.openTextDocument(Uri.file(complemantary.path))
+                    .then((complemantaryDocument: TextDocument) => {
+                        window.showTextDocument(complemantaryDocument, complemantary?.handSide === HandSide.Left ? 1 : 2);
+                        window.showTextDocument(document, complemantary?.handSide === HandSide.Right ? 1 : 2);
+                        this.lastOpenedComplementary = <string>complemantary?.path;
+                    });
+            }
+        } else {
+            this.lastOpenedComplementary = "";
         }
     }
 }
