@@ -51,17 +51,13 @@ export class API {
             }
         });
         let complemantary: IMapPathResult | null = ph.mapPath(document.fileName);
-        if (document.fileName !== this.lastOpenedComplementary) {
-            if (complemantary) {
-                workspace.openTextDocument(Uri.file(complemantary.path))
-                    .then((complemantaryDocument: TextDocument) => {
-                        window.showTextDocument(complemantaryDocument, complemantary?.handSide === HandSide.Left ? 1 : 2);
-                        window.showTextDocument(document, complemantary?.handSide === HandSide.Right ? 1 : 2);
-                        this.lastOpenedComplementary = <string>complemantary?.path;
-                    });
-            }
-        } else {
-            this.lastOpenedComplementary = "";
+        if (complemantary) {
+            workspace.openTextDocument(Uri.file(complemantary.path))
+                .then((complemantaryDocument: TextDocument) => {
+                    window.showTextDocument(complemantaryDocument, complemantary?.handSide === HandSide.Left ? 1 : 2);
+                    window.showTextDocument(document, complemantary?.handSide === HandSide.Right ? 1 : 2);
+                    this.lastOpenedComplementary = <string>complemantary?.path;
+                });
         }
     }
 }
