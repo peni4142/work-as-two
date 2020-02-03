@@ -30,13 +30,13 @@ suite("pathHandler", () => {
     test("map test to functional", () => {
         let complemantary: IMapPathResult | null = ph.mapPath(testPath);
         equal(complemantary?.path, functionalPath);
-        equal(complemantary?.handSide, HandSide.Left);
+        equal(complemantary?.handSide, HandSide.Right);
     });
 
     test("map functional to test", () => {
         let complemantary: IMapPathResult | null = ph.mapPath(functionalPath);
         equal(complemantary?.path, testPath);
-        equal(complemantary?.handSide, HandSide.Right);
+        equal(complemantary?.handSide, HandSide.Left);
     });
 
 
