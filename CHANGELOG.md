@@ -1,7 +1,5 @@
 # Change Log
 
-Getting started
-
-## [Unreleased]
+## [0.1.0]
 
 - Initial release
