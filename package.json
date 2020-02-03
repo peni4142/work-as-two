@@ -4,7 +4,15 @@
 	"author": {"name": "peni4142"},
 	"description": "Opens the associated file for simultaneous work on two files.",
 	"version": "0.1.0",
-	"license": "GPL-3.0-or-later",
+	"icon": "work-as-two.jpg",
+	"license": "GPL-3.0-or-later",	
+	"keywords": [
+		"tdd",
+		"testdriven",
+		"web",
+		"html",
+		"css"
+	],
 	"repository": {
 		"url": "https://github.com/peni4142/work-as-two"
 	},
