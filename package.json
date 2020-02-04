@@ -6,17 +6,20 @@
 	"version": "0.1.0",
 	"icon": "work-as-two.jpg",
 	"license": "GPL-3.0-or-later",	
+	"publisher": "peni4142",
 	"keywords": [
 		"tdd",
 		"testdriven",
 		"web",
 		"html",
-		"css"
+		"css",
+		"split",
+		"screen",
+		"splitscreen"
 	],
 	"repository": {
 		"url": "https://github.com/peni4142/work-as-two"
 	},
-	"publishConfig": { "registry": "https://npm.pkg.github.com/" },
 	"engines": {
 		"vscode": "^1.41.0"
 	},
