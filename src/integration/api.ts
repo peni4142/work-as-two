@@ -8,7 +8,6 @@ import { IConfig } from "../interface";
 
 export class API {
 
-    private static lastOpenedComplementary: string = "";
     private static prevState: TextEditor[] = window.visibleTextEditors;
 
     public static onDidShowTextDocument() {
@@ -21,7 +20,14 @@ export class API {
                             return;
                         }
                     }
+                } else if (actualState.length - this.prevState.length === 0) {
+                    let openedTextDocuments: TextDocument[] = this.getOpenedDocumntes(actualState);
+                    if (openedTextDocuments.length === 1) {
+                        this.businessLogik(openedTextDocuments[1]);
+                    }
                 }
+            } catch (error) {
+                console.log(error.message);
             }
             finally {
                 this.prevState = actualState;
@@ -29,9 +35,19 @@ export class API {
         });
     }
 
+    private static getOpenedDocumntes(actualState: TextEditor[]): TextDocument[] {
+        let result: TextDocument[] = [];
+        for (let i: number = 0; i < actualState.length; i++) {
+            if (this.documentIsOpened(actualState[i].document, this.prevState)) {
+                result.push(actualState[i].document);
+            }
+        }
+        return result;
+    }
+
     private static documentIsOpened(document: TextDocument, textEditors: TextEditor[]): boolean {
         for (let i: number = 0; 0 < textEditors.length; i++) {
-            if (document.fileName === textEditors[i].document.fileName) {
+            if (textEditors[i] && document.fileName === textEditors[i].document.fileName) {
                 return true;
             }
         }
@@ -56,7 +72,6 @@ export class API {
                 .then((complemantaryDocument: TextDocument) => {
                     window.showTextDocument(complemantaryDocument, complemantary?.handSide === HandSide.Left ? 1 : 2);
                     window.showTextDocument(document, complemantary?.handSide === HandSide.Right ? 1 : 2);
-                    this.lastOpenedComplementary = <string>complemantary?.path;
                 });
         }
     }
