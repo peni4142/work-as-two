@@ -1,11 +1,13 @@
 {
 	"name": "work-as-two",
 	"displayName": "work-as-two",
-	"author": {"name": "peni4142"},
+	"author": {
+		"name": "peni4142"
+	},
 	"description": "Opens the associated file for simultaneous work on two files.",
 	"version": "0.1.0",
 	"icon": "work-as-two.jpg",
-	"license": "GPL-3.0-or-later",	
+	"license": "GPL-3.0-or-later",
 	"publisher": "peni4142",
 	"keywords": [
 		"tdd",
@@ -38,7 +40,7 @@
 		"pretestVscode": "npm run compile",
 		"test": "mocha -r ts-node/register src/**/*.test.ts -u tdd",
 		"testVscode": "node ./out/test/runTest.js",
-		"build" :"webpack --mode production"
+		"build": "webpack --mode production"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",

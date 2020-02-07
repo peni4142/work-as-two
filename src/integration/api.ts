@@ -23,7 +23,7 @@ export class API {
                 } else if (actualState.length - this.prevState.length === 0) {
                     let openedTextDocuments: TextDocument[] = this.getOpenedDocumntes(actualState);
                     if (openedTextDocuments.length === 1) {
-                        this.businessLogik(openedTextDocuments[1]);
+                        this.businessLogik(openedTextDocuments[0]);
                     }
                 }
             } catch (error) {
@@ -46,7 +46,7 @@ export class API {
     }
 
     private static documentIsOpened(document: TextDocument, textEditors: TextEditor[]): boolean {
-        for (let i: number = 0; 0 < textEditors.length; i++) {
+        for (let i: number = 0; i < textEditors.length; i++) {
             if (textEditors[i] && document.fileName === textEditors[i].document.fileName) {
                 return true;
             }
