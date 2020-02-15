@@ -1,5 +1,5 @@
 import { existsSync } from "fs";
-import { IPathMapping, IRegexReplacement, IMapPathResult } from "./interfaces";
+import { IPathMapping, IMapPathResult } from "./interfaces";
 import { HandSide } from "./enum";
 
 export class PathHandler {
@@ -8,6 +8,15 @@ export class PathHandler {
 
     }
 
+    public test(path:string): HandSide | null{
+        if (this.pathMapping.pathLeft.escapedRegex.test(path)) {
+            return HandSide.Left;
+        }
+        if (this.pathMapping.pathRight.escapedRegex.test(path)) {
+            return HandSide.Right;
+        }
+        return null;
+    }
 
     public mapPath(path: string): IMapPathResult | null {
         if (existsSync(path)) {

@@ -38,8 +38,8 @@
 		"compile": "webpack --mode development",
 		"watch": "webpack --mode development -w",
 		"pretestVscode": "npm run compile",
-		"test": "mocha -r ts-node/register src/**/*.test.ts -u tdd",
-		"testVscode": "node ./out/test/runTest.js",
+		"unit-test": "mocha -r ts-node/register src/logic/**/*.unit-test.ts -u tdd",
+		"integration-test": "tsc -p ./&& node ./out/integration/integrationtests/testRunner.js",
 		"build": "webpack --mode production"
 	},
 	"devDependencies": {
@@ -48,6 +48,7 @@
 		"@types/node": "^12.11.7",
 		"@types/vscode": "^1.41.0",
 		"glob": "^7.1.5",
+		"mocha": "^7.0.1",
 		"ts-loader": "^6.2.1",
 		"ts-node": "^8.6.2",
 		"tslint": "^5.20.0",

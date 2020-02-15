@@ -11,15 +11,15 @@ suite("pathHandler", () => {
     let ph: PathHandler = new PathHandler({
         pathRight: {
             escapedRegex: /^([^.]*)(\.ts)/,
-            result: "$1.test$2"
+            result: "$1.unit-test$2"
         },
         pathLeft: {
-            escapedRegex: /^([^.]*)\.test(\.ts)/,
+            escapedRegex: /^([^.]*)\.unit-test(\.ts)/,
             result: "$1$2"
         }
     });
 
-    let testPath: string = resolve("src/logic/pathHandler.test.ts");
+    let testPath: string = resolve("src/logic/pathHandler.unit-test.ts");
     let functionalPath: string = resolve("src/logic/pathHandler.ts");
 
     test("a example", () => {
