@@ -36,11 +36,12 @@
 	"scripts": {
 		"vscode:prepublish": "npm run build",
 		"compile": "webpack --mode development",
+		"test:compile": "tsc -p ./",
 		"watch": "webpack --mode development -w",
 		"pretestVscode": "npm run compile",
 		"test": "npm run unit-test && npm run integration-test",
 		"unit-test": "mocha -r ts-node/register src/logic/**/*.unit-test.ts -u tdd",
-		"integration-test": "tsc -p ./&& node ./out/integration/integrationtests/testRunner.js",
+		"integration-test": "tsc -p ./&& npm run compile && node ./out/integration/integrationtests/testRunner.js",
 		"build": "webpack --mode production"
 	},
 	"devDependencies": {

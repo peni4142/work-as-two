@@ -7,7 +7,6 @@ import { ExtendedApi } from "./extendedApi";
 
 
 
-
 export function integration(actualState: TextEditor[], openedTextEditor: TextEditor): void {
     let config: IConfig = <any>workspace.getConfiguration("work-as-two");
 

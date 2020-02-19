@@ -8,8 +8,8 @@
     },
     // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
     "typescript.tsc.autoDetect": "off",
-    "work-as-two.leftEscapedRegex": "^(.*)(\\.quatsch)$",
-    "work-as-two.leftTransformToRight": "$1.test$2",
-    "work-as-two.rightEscapedRegex": "^(.*)\\.test(\\.quatsch)$",
-    "work-as-two.rightTransformToLeft": "$1$2"
+    "work-as-two.leftEscapedRegex": "^(([^\\\\\\\/]+(\\\\|\\/))+([^.]*))(\\.quatsch)$",
+    "work-as-two.leftTransformToRight": "$1.test$5",
+    "work-as-two.rightEscapedRegex": "^(([^\\\\\\/]+(\\\\|\\/))+([^.]*))\\.test(\\.quatsch)$",
+    "work-as-two.rightTransformToLeft": "$1$5"
 }

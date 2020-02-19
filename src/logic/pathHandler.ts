@@ -8,7 +8,7 @@ export class PathHandler {
 
     }
 
-    public test(path:string): HandSide | null{
+    public getHandSide(path:string): HandSide | null{
         if (this.pathMapping.pathLeft.escapedRegex.test(path)) {
             return HandSide.Left;
         }
