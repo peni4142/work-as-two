@@ -10,11 +10,11 @@ suite("pathHandler", () => {
 
     let ph: PathHandler = new PathHandler({
         pathLeft: {
-            escapedRegex: /^(([^\\\/]+(\\|\/))+([^.]*))(\.ts)$/,
+            escapedRegex: /^(([^\\\/]*(\\|\/))+([^.]*))(\.ts)$/,
             result: "$1.unit-test$5"
         },
         pathRight: {
-            escapedRegex:/^(([^\\\/]+(\\|\/))+([^.]*))\.unit-test(\.ts)$/,
+            escapedRegex:/^(([^\\\/]*(\\|\/))+([^.]*))\.unit-test(\.ts)$/,
             result: "$1$5"
         }
     });
@@ -24,7 +24,7 @@ suite("pathHandler", () => {
     let testPath: string = resolve("src/logic/pathHandler.unit-test.ts");
 
     test("example functional to test", () => {
-        let testString: string = functionalPath.replace(/^(([^\\\/]+(\\|\/))+([^.]*))(\.ts)$/, "$1.unit-test$5");
+        let testString: string = functionalPath.replace(/^(([^\\\/]*(\\|\/))+([^.]*))(\.ts)$/, "$1.unit-test$5");
         equal(testString, testPath);
     });
 
