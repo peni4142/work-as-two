@@ -13,8 +13,8 @@
     "mochaExplorer.nodePath": null,
     "mochaExplorer.ui": "tdd",
     "mochaExplorer.monkeyPatch": false,
-    "work-as-two.leftEscapedRegex": "/^(.*)(\\.ts)/",
-    "work-as-two.leftTranformToRight": "$1.test$2",
-    "work-as-two.rightEscapedRegex": "/^(.*)\\.test(\\.ts)/",
-    "work-as-two.rightTranformToLeft": "$1$2"
+    "work-as-two.leftEscapedRegex": "^(.*)(\\.ts)$",
+    "work-as-two.leftTransformToRight": "$1.unit-test$2",
+    "work-as-two.rightEscapedRegex": "^(.*)\\.unit-test(\\.ts)$",
+    "work-as-two.rightTransformToLeft": "$1$2"
 }

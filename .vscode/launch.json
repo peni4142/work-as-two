@@ -11,7 +11,7 @@
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
 			"args": [
-				"${workspaceFolder}/test_workspace",
+				"${workspaceFolder}",//test_workspace",
 				"--extensionDevelopmentPath=${workspaceFolder}",
 				"-n"
 			],

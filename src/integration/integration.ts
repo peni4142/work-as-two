@@ -13,7 +13,7 @@ export function integration(actualState: TextEditor[], openedTextEditor: TextEdi
     let ph: PathHandler = new PathHandler({
         pathLeft: {
             escapedRegex: new RegExp(config.leftEscapedRegex),
-            result: config.leftTransformToRight
+            result: config.leftTransformToRight 
         },
         pathRight: {
             escapedRegex: new RegExp(config.rightEscapedRegex),
