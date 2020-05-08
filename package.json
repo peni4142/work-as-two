@@ -32,7 +32,42 @@
 		"*"
 	],
 	"main": "./dist/extension.js",
-	"contributes": {},
+	"contributes": {
+		"properties":{		
+			"work-as-two.leftEscapedRegex": {
+				"description":"example: ^(.*)(\\.ts)$",
+				"type": [
+					"string"
+				],
+				"default" : "^(.*)(\\.ts)$",
+				"scope":"resource"
+			},
+			"work-as-two.leftTransformToRight":{ 
+				"description":"example: $1.test$2",
+				"type": [
+					"string"
+				],
+				"default" : "$1.test$2",
+				"scope":"resource"
+			},
+			"work-as-two.rightEscapedRegex": {
+				"description":"example: ^(.*)(\\.ts)$",
+				"type": [
+					"string"
+				],
+				"default" : "^(.*)(\\.ts)$",
+				"scope":"resource"
+			},
+			"work-as-two.rightTransformToLeft":{ 
+				"description":"example: ^(.*)\\.test(\\.ts)$",
+				"type": [
+					"string"
+				],
+				"default" : "$1$2",
+				"scope":"resource"
+			}
+		}
+	},
 	"scripts": {
 		"vscode:prepublish": "npm run build",
 		"compile": "webpack --mode development",
