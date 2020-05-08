@@ -3,3 +3,4 @@ package-lock.json
 .vscode-test
 dist
 out
+*.vsix

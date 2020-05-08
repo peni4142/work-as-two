@@ -33,38 +33,38 @@
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
-		"properties":{		
+		"properties": {
 			"work-as-two.leftEscapedRegex": {
-				"description":"example: ^(.*)(\\.ts)$",
+				"description": "example: ^(.*)(\\.ts)$",
 				"type": [
 					"string"
 				],
-				"default" : "^(.*)(\\.ts)$",
-				"scope":"resource"
+				"default": "^(.*)(\\.ts)$",
+				"scope": "resource"
 			},
-			"work-as-two.leftTransformToRight":{ 
-				"description":"example: $1.test$2",
+			"work-as-two.leftTransformToRight": {
+				"description": "example: $1.test$2",
 				"type": [
 					"string"
 				],
-				"default" : "$1.test$2",
-				"scope":"resource"
+				"default": "$1.test$2",
+				"scope": "resource"
 			},
 			"work-as-two.rightEscapedRegex": {
-				"description":"example: ^(.*)(\\.ts)$",
+				"description": "example: ^(.*)(\\.ts)$",
 				"type": [
 					"string"
 				],
-				"default" : "^(.*)(\\.ts)$",
-				"scope":"resource"
+				"default": "^(.*)(\\.ts)$",
+				"scope": "resource"
 			},
-			"work-as-two.rightTransformToLeft":{ 
-				"description":"example: ^(.*)\\.test(\\.ts)$",
+			"work-as-two.rightTransformToLeft": {
+				"description": "example: ^(.*)\\.test(\\.ts)$",
 				"type": [
 					"string"
 				],
-				"default" : "$1$2",
-				"scope":"resource"
+				"default": "$1$2",
+				"scope": "resource"
 			}
 		}
 	},
